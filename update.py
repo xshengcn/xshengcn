@@ -21,6 +21,7 @@ with open('README.md', 'w') as f:
     for entry in root.findall('nsfeed:entry', nsfeed)[:5]:
         text = entry.find('nsfeed:title', nsfeed).text
         url = entry.find('nsfeed:link', nsfeed).attrib['href']
+        print(text)
         published = entry.find('nsfeed:published', nsfeed).text[:10]
         f.write('- {} [{}]({})\n'.format(published, text, url))
 
