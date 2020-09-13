@@ -1,7 +1,7 @@
 import requests
 import xml.etree.ElementTree as ET
 
-feed = requests.get('http://blog.xusheng.online/atom.xml').text
+feed = requests.get('https://blog.xusheng.online/atom.xml').text
 root = ET.fromstring(feed)
 nsfeed = {'nsfeed': 'http://www.w3.org/2005/Atom'}
 with open('README.md', 'w') as f:
@@ -25,5 +25,5 @@ with open('README.md', 'w') as f:
         f.write('- {} [{}]({})\n'.format(published, text, url))
 
     f.write('''
-[>>> More blog posts](http://blog.xusheng.online/archives/)
+[>>> More blog posts](https://blog.xusheng.online/archives/)
 ''')
